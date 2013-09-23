@@ -1,0 +1,168 @@
+﻿/* =============================================== */
+/* Stylesheet for the AtlasChecklist jQuery Plugin */
+/* =============================================== */
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* this class will be the container for the checklist*/
+.atlasChecklistContainer
+{
+    position: relative;
+    padding: 5px;
+    font-size: 0.8em;
+}
+
+.atlasChecklistContainer .header
+{
+    background-color: #808080;
+    padding: 1px;
+    text-align: center;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    margin-top: 4px;
+    color: white;
+    font-size: 1.05em;
+}
+
+
+.atlasChecklistContainer .listholder
+{
+    width: 98%;
+    margin: auto;
+    list-style: none;
+    padding-left: 0;
+}
+
+.atlasChecklistContainer .list:not(.header)
+{
+    width: 98%;
+    height: auto;
+    background-color: #ffa425;
+    color: white;
+    padding: 1px;
+    transition: all 0.25s;
+    border: 1px solid #ca7625;
+    font-size: 14px;
+    text-align:left;
+    margin:auto;
+    margin-top: 1px;
+}
+
+    .atlasChecklistContainer .list:not(.header) span
+    {
+        margin-left: 2px;
+        display:inline-block;
+        max-width:93%;
+    }
+
+.listholder .list:hover:not(.header)
+{
+    background-color: #ff7d00;
+    color: white;
+    cursor: pointer;
+}
+
+    .listholder .list:hover:not(.header) > span
+    {
+        margin-left: 10px;
+        transition: all 0.2s;
+    }
+
+.listholder .list.checked:not(.header)
+{
+    background-color: #60a9e0;
+    background-image: url(img/icons/check.png); /* 16px x 16px */
+    /*padding-left: 20px;      make text start to the right of the image */
+    background-repeat: no-repeat; /* make the background image appear only once */
+    background-position:right;
+    transition: all 0.1s ease-in-out;
+    border:1px solid #6195bd;
+}
+
+    .listholder .list.checked:not(.header):hover
+    {
+        background-image: url(img/icons/checklight.png) !important; /* 16px x 16px */
+        /*padding-left: 20px;      make text start to the right of the image */
+        background-repeat: no-repeat; /* make the background image appear only once */
+        background-position:right;
+    }
+
+.listholder .list.checkedWithSub:not(.header)
+{
+    background-color: #60a9e0;
+    background-image: url(img/icons/check.png) !important; /* 16px x 16px */
+    /*padding-left: 20px;      make text start to the right of the image */
+    background-repeat: no-repeat !important; /* make the background image appear only once */
+    background-position:right !important;
+    transition: all 0.1s ease-in-out;
+    border:1px solid #6195bd;
+}
+
+    .listholder .list.checkedWithSub:not(.header):hover
+    {
+        background-image: url(img/icons/down.png) !important; /* 16px x 16px */
+        background-repeat: no-repeat !important; /* make the background image appear only once */
+        background-position: right !important;
+    }
+
+
+.listWithSub
+{
+    background-image: url(img/icons/down.png) !important; /* 16px x 16px */
+    /*padding-left: 20px;      make text start to the right of the image */
+    background-repeat: no-repeat !important; /* make the background image appear only once */
+    background-position: right !important;
+    position:relative !important;
+}
+
+.sub
+{
+    display:none;
+    position:absolute;
+    /*margin-top:2px !important;*/
+    background-color:white;
+    border:1px solid #888888;
+    text-align:center;
+    z-index:999999 !important;
+    box-shadow:1px 2px 2px #888888;
+    border-radius:3px;
+}
+.sub:after {
+    border-left: solid transparent 5px;
+    border-right: solid transparent 5px;
+    border-bottom: solid white 7px;
+    top: -7px;
+    content: "";
+    height: 0;
+    left: 50%;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+}
+    .sub.hidetail::after
+    {
+        display:none;
+    }
+.sub:before
+{
+    bottom: -20px;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.showSubs
+{
+    background-color: #888888 !important;
+    color: white !important;
+    background-image:none !important;
+    transition:background-image 0.1s;
+}
+
+.cancelhide
+{
+    overflow:visible !important;
+}
